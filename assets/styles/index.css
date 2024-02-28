@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9;
+  }
+  @font-face {
+    font-family: 'NimbusRomNo9L';
+    src: url('/assets/fonts/nimbus-roman-no9-l/NimbusRomNo9L-Reg.otf') format('opentype');
+    font-weight: normal; 
+  }
+  @font-face {
+    font-family: 'NimbusRomNo9L';
+    src: url('/assets/fonts/nimbus-roman-no9-l/NimbusRomNo9L-Med.otf') format('opentype');
+    font-weight: medium; 
+  }
+
+  .kr-font-nimbusRomNo9L{
+    font-family: "NimbusRomNo9L", cursive;
+  }
+
+  .kr-font-praise{
+    font-family: "Praise", cursive;
+  }
+
+  .poppins {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .kp-tab-content {
+    display: none;
+  }
+
+  .kp-active-tab {
+    display: block;
+  }
+
+  .kp-tab-button{
+      background-color: #FFFFFF;
+      color: #252338;
+      font-family: "NimbusRomNo9L", cursive;
+  }
+  .kp-active-button {
+    background-color: #252338;
+    color: #fff;
+  }
+  

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./assets/script/mini.style.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Praise&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/index.css" />
+</head>
+<body class="max-w-[1300px] mx-auto px-4 lg:px-0">
+    
+    <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="z-[2] border-0 rotate-90 fixed top-[50%] -right-[55px] text-center px-6 py-3 bg-[#252338] flex rounded-b-[10px] text-[18px] font-[500] text-[#FFFFFF]">
+        <div class="h-[20px] w-[20px] mr-2.5">
+        <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+        </div>
+        <span>REVIEWS</span>
+    </button>
+
+    <div class="my-8">
+        <button id="kp-review-btn" class="kp-tab-button kp-active-button text-[18px] lg:text-[28px] px-[24px] lg:px-[32px] py-[6px] lg:py-[14px] rounded-[10px] mr-3 lg:mr-8 mt-5" onclick="showTabKP('kp-review-tab', 'kp-review-btn','kp-tab-content','kp-active-tab','kp-tab-button','kp-active-button')">Review</button>
+        <button id="kp-questions-btn" class="kp-tab-button text-[18px] lg:text-[28px] px-[24px] lg:px-[32px] py-[6px] lg:py-[14px] rounded-[10px] mr-3 lg:mr-8 mt-5" onclick="showTabKP('kp-questions-tab', 'kp-questions-btn','kp-tab-content','kp-active-tab','kp-tab-button','kp-active-button')">Questions</button>
+    </div>
+
+    <div id="kp-review-tab" class="kp-tab-content kp-active-tab">
+        <div class="bg-white rounded-[10px] w-full max-w-[1300px] mx-auto h-[73vh]">
+            <div class="grid grid-cols-12 gap-4 px-6 md:px-12 lg:px-24 py-6 md:py-8 lg:py-10">
+                <div class="col-span-12 ">
+                    <h3 class=" text-[50px] md:text-[80px] text-center kr-font-praise">Review</h3>
+                </div>
+                <div class="col-span-12 h-[50vh] flex items-center justify-center">
+                    <div>
+                        <div>
+                            <p class="text-center text-[24px] lg:text-[50px] kp-font-nimbusRomNo9L">There is no review for this product</p>
+                        </div>
+                        <div class="flex items-center justify-center mt-10">
+                            <button data-modal-target="Writereview-modal" data-modal-toggle="Writereview-modal" class=" px-4 lg:px-8 py-3 lg:py-6 text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px]">
+                                Ask A Review  
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="kp-questions-tab" class="kp-tab-content">
+        <div class="bg-white rounded-[10px] w-full max-w-[1300px] mx-auto h-[73vh]">
+            <div class="grid grid-cols-12 gap-4 px-6 md:px-12 lg:px-24 py-6 md:py-8 lg:py-10">
+                <div class="col-span-12 ">
+                    <h3 class=" text-[50px] md:text-[80px] text-center kr-font-praise">Questions</h3>
+                </div>
+                <div class="col-span-12 h-[50vh] flex items-center justify-center">
+                    <div>
+                        <div>
+                            <p class="text-center text-[24px] lg:text-[50px] kp-font-nimbusRomNo9L">There is no question for this product</p>
+                        </div>
+                        <div class="flex items-center justify-center mt-10">
+                            <button data-modal-target="AskAQuestion-modal" data-modal-toggle="AskAQuestion-modal" class=" px-4 lg:px-8 py-3 lg:py-6 text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px]">
+                                Ask A Question  
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Writereview-Modal -->
+     <div id="Writereview-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[500] w-full justify-center items-center md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative w-full  max-w-[95%] md:max-w-[85%] lg:max-w-[1080px] mx-auto max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 ">
+                    <button id="Writereview-modal-btn" data-modal-hide="Writereview-modal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="relative max-h-full text-[#252338] px-5 lg:px-40 py-6 flex items-center justify-center">
+                    <div>
+                        <div id="kp-wr-step-1" class="py-10">
+                            <h2 class="kr-font-nimbusRomNo9L font-normal text-[24px] lg:text-[42px] text-center">How would you rate this item?</h2>
+                            <div class="kp-stars flex items-center justify-center gap-6 ">
+                                <span class="kp-star-rating text-[5vh] lg:text-[10vh] text-[#D9D9D9] cursor-pointer">★</span>
+                                <span class="kp-star-rating text-[5vh] lg:text-[10vh] text-[#D9D9D9] cursor-pointer">★</span>
+                                <span class="kp-star-rating text-[5vh] lg:text-[10vh] text-[#D9D9D9] cursor-pointer">★</span>
+                                <span class="kp-star-rating text-[5vh] lg:text-[10vh] text-[#D9D9D9] cursor-pointer">★</span>
+                                <span class="kp-star-rating text-[5vh] lg:text-[10vh] text-[#D9D9D9] cursor-pointer">★</span>
+                            </div>
+                            <div class="flex items-center justify-between px-5 text-[#252338]">
+                                <p>Disliked It</p>
+                                <p>liked It</p>
+                            </div>
+                        </div>
+                        <div id="kp-wr-step-2" class="py-2" style="display: none;">
+                            <div class="mb-5 text-center">
+                                <h2 class="kr-font-nimbusRomNo9L font-normal text-[24px] lg:text-[42px]">Show It Off</h2>
+                                <p class="text-[18px] lg:text-[30px] kr-font-nimbusRomNo9L font-normal">We’d love to see it in action!</p>
+                            </div>
+                            <div class="flex items-center justify-center w-full">
+                                <div>
+                                    <label for="dropzone-file" class="cursor-pointer">
+                                        <div class="">
+                                            <div>
+                                                <img id="preview-image" src="/assets/images/reviewpage/upload-img.svg" alt="upload-image" class="w-[80%] lg:w-[529] h-auto mx-auto" />
+                                            </div>
+                                           <div class="text-center mt-7 ">
+                                                <p class="mb-5"><a class="text-[#0081F9]">Click Here</a> to upload photos or videos</p>
+                                           </div>
+                                        </div>
+                                        <input id="dropzone-file" type="file" class="hidden" onchange="previewFile()"  />
+                                    </label>
+                                    <p id="kp-wr-stepper-cancle" class="text-[#FF0000] text-center cursor-pointer">I’ll Do It Later</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="kp-wr-step-3" class="py-2 w-[100%]" style="display: none;">
+                            <div class="mb-7 text-center">
+                                <h2 class="kr-font-nimbusRomNo9L font-normal text-[24px] lg:text-[42px]">Tell Us More</h2>
+                            </div>
+                            <div class="w-[100%]">
+                                <textarea id="message" rows="10" class="block p-2.5 w-[280px] sm:w-[300px] md:w-[529px] mx-auto rounded-[10px] text-sm text-gray-900 border-2 border-[#D9D9D9]" placeholder="Share your experience"></textarea>
+                            </div>
+                            <div class="text-center mt-7">
+                                    <button class="bg-[#252338] py-2.5 px-10 w-[280px] sm:w-[300px] md:w-[529px] mx-auto text-center text-[#fff] rounded-[10px]">NEXT</button>
+                            </div>
+                        </div>
+                        <div id="kp-wr-step-4" class="py-2" style="display: none;">
+                            <div class="mb-7 text-center">
+                                <h2 class="kr-font-nimbusRomNo9L font-normal text-[24px] lg:text-[42px]">About You</h2>
+                            </div>
+                            <div>
+                                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                                    <div>
+                                        <label for="first_name" class="kr-font-nimbusRomNo9L block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name <span class="text-[#FF0000]">*</span></label>
+                                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
+                                    </div>
+                                    <div>
+                                        <label for="last_name" class="kr-font-nimbusRomNo9L block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name<span class="text-[#FF0000]">*</span></label>
+                                        <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
+                                    </div>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="email" class="kr-font-nimbusRomNo9L block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address<span class="text-[#FF0000]">*</span></label>
+                                    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required />
+                                </div> 
+                                <p class="kr-font-nimbusRomNo9L text-[18px] text-center mx-auto w-[90%]">By submitting, I acknowledge the <span class="underline">Terms of Service</span> & <span class="underline">Privacy Policy</span>
+                                    and that my review will be publicly posted & shared online</p>
+                            </div>
+                           <div class="text-center mt-20 ">
+                                <button class="bg-[#252338] py-2.5 px-10 w-[90%] md:w-[429px] text-center text-[#fff] rounded-[10px]">Done</button>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AskAQuestion-Modal -->
+    <div id="AskAQuestion-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[500] w-full justify-center items-center md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative w-full  max-w-[95%] md:max-w-[85%] lg:max-w-[1080px] mx-auto max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 ">
+                    <button id="AskAQuestion-modal-btn" data-modal-hide="AskAQuestion-modal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="relative max-h-full text-[#252338] px-5 lg:px-40 py-6 flex items-center justify-center">
+                    <div>
+                        <div id="kp-aq-step-1" class="modal-step py-2 w-[100%] block">
+                            <div class="mb-7 text-center">
+                                <h2 class="kr-font-nimbusRomNo9L font-normal text-[24px] lg:text-[42px]">Tell Us More</h2>
+                            </div>
+                            <div class="w-[100%]">
+                                <textarea id="message_aq" rows="10" class="block p-2.5 w-[280px] sm:w-[300px] md:w-[529px] mx-auto rounded-[10px] text-sm text-gray-900 border-2 border-[#D9D9D9]" placeholder="Share your experience"></textarea>
+                            </div>
+                            <div class="text-center mt-7">
+                                <button id="kp-qa-step1-btn" onclick="showStep()"  class="bg-[#252338] py-2.5 px-10 w-[280px] sm:w-[300px] md:w-[529px] mx-auto text-center text-[#fff] rounded-[10px]">NEXT</button>
+                            </div>
+                        </div>
+                        <div id="kp-aq-step-2" class="modal-step py-2 hidden">
+                            <div class="mb-7 text-center">
+                                <h2 class="kr-font-nimbusRomNo9L font-normal text-[24px] lg:text-[42px]">About You</h2>
+                            </div>
+                            <div>
+                                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                                    <div>
+                                        <label for="first_name_aq" class="kr-font-nimbusRomNo9L block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name <span class="text-[#FF0000]">*</span></label>
+                                        <input type="text" id="first_name_aq" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
+                                    </div>
+                                    <div>
+                                        <label for="last_name_aq" class="kr-font-nimbusRomNo9L block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name<span class="text-[#FF0000]">*</span></label>
+                                        <input type="text" id="last_name_aq" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
+                                    </div>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="email_aq" class="kr-font-nimbusRomNo9L block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address<span class="text-[#FF0000]">*</span></label>
+                                    <input type="email" id="email_aq" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required />
+                                </div>
+                                <p class="kr-font-nimbusRomNo9L text-[18px] text-center mx-auto w-[90%]">By submitting, I acknowledge the <span class="underline">Terms of Service</span> & <span class="underline">Privacy Policy</span> and that my review will be publicly posted & shared online</p>
+                            </div>
+                            <div class="text-center mt-20">
+                                <button id="kp-qa-step2-btn" onclick="submitAndLogData()" class="bg-[#252338] py-2.5 px-10 w-[90%] md:w-[429px] text-center text-[#fff] rounded-[10px]">Done</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript" src="/assets/script/review-card-text-short.js"></script>
+
+    <script type="text/javascript" src="/assets/script/card-slick.js"></script>
+
+    <script type="text/javascript" src="/assets/script/kp-wr-stepper-model.js"> </script>
+    <script type="text/javascript" src="/assets/script/kp-aq-stepper-model.js"> </script>
+    <script type="text/javascript" src="/assets/script/showTabRQ.js"> </script>
+  
+</body>
+</html>
