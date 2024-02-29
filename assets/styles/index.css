@@ -45,3 +45,11 @@ body {
     color: #fff;
   }
   
+.kpSP-tab-button{
+  background-color: #FFFFFF;
+  color: #252338;
+} 
+.kpSP-active-button{
+  background-color: #252338;
+  color: #fff;
+}

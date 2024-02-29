@@ -7,4 +7,4 @@ function updateImage(ele){
     }
     ele.classList.remove("opacity-60");
     ele.classList.add("opacity-100");
-  }
+}

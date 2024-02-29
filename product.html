@@ -16,7 +16,7 @@
 </head>
 <body >
     <div class="max-w-[1300px] mx-auto px-4 lg:px-0">
-        <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="z-[2] border-0 rotate-90 fixed top-[50%] -right-[55px] text-center px-6 py-3 bg-[#252338] flex rounded-b-[10px] text-[18px] font-[500] text-[#FFFFFF]">
+        <button data-modal-target="kp-mainPop-modal" data-modal-toggle="kp-mainPop-modal" class="z-[2] border-0 rotate-90 fixed top-[50%] -right-[55px] text-center px-6 py-3 bg-[#252338] flex rounded-b-[10px] text-[18px] font-[500] text-[#FFFFFF]">
             <div class="h-[20px] w-[20px] mr-2.5">
             <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
             </div>
@@ -123,14 +123,14 @@
                             <div class="col-span-12 lg:col-span-6">
                                 <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-4 ">
                                 <div>
-                                    <button data-modal-target="AskAQuestion-modal" data-modal-toggle="AskAQuestion-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
+                                    <button id="kas-askQues-btn" data-modal-target="AskAQuestion-modal" data-modal-toggle="AskAQuestion-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
                                     <div class="h-[14px] w-[14px] mr-2.5">
                                         <img src="/assets/images/edit.svg" alt="edit" width="100%" height="auto" />
                                     </div>Ask A Question  
                                     </button>
                                 </div>
                                 <div>
-                                    <button data-modal-target="Writereview-modal" data-modal-toggle="Writereview-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
+                                    <button id="kas-wrtRev-btn" data-modal-target="Writereview-modal" data-modal-toggle="Writereview-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
                                     <div class="h-[14px] w-[14px] mr-2.5">
                                         <img src="/assets/images/edit.svg" alt="edit" width="100%" height="auto" />
                                     </div>Write A Review  
@@ -179,7 +179,7 @@
                     </div>
                     <div class="col-span-12 mt-10">
                         <div class="grid grid-cols-12 ">
-                            <div class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                 <div class="w-[233px] mx-auto drop-shadow-lg">
                                     <div>
                                         <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -243,7 +243,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                 <div class="w-[233px] mx-auto drop-shadow-lg">
                                     <div>
                                         <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -307,7 +307,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                 <div class="w-[233px] mx-auto drop-shadow-lg">
                                     <div>
                                         <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -371,7 +371,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                 <div class="w-[233px] mx-auto drop-shadow-lg">
                                     <div>
                                         <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -435,7 +435,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                 <div class="w-[233px] mx-auto drop-shadow-lg">
                                     <div>
                                         <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -499,7 +499,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                 <div class="w-[233px] mx-auto drop-shadow-lg">
                                     <div>
                                         <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -563,7 +563,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                 <div class="w-[233px] mx-auto drop-shadow-lg">
                                     <div>
                                         <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -627,7 +627,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                 <div class="w-[233px] mx-auto drop-shadow-lg">
                                     <div>
                                         <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -1076,8 +1076,8 @@
         </div>
 
         <!-- prodcutReview-Modal -->
-        <div id="prodcutReview-modal" tabindex="-1" aria-hidden="true" class="hidden h-[calc(100%-3rem)] max-h-full rounded-[10px]  overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[500] w-full justify-center items-center md:inset-0">
-            <div class="relative rounded-[10px] max-w-[95%] md:max-w-[85%] lg:max-w-[1080px] mx-auto max-h-[90vh] lg:max-h-full overflow-scroll">
+        <div id="prodcutReview-modal" tabindex="-1" aria-hidden="true" class="hidden h-[calc(100%-3rem)] max-h-full rounded-[10px] z-[100] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 w-full justify-center items-center md:inset-0">
+            <div class="relative z-[210] rounded-[10px] max-w-[95%] md:max-w-[85%] lg:max-w-[1080px] mx-auto max-h-[90vh] lg:max-h-full overflow-scroll">
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <!-- Modal header -->
@@ -1229,12 +1229,13 @@
                     </div>
                 </div>
             </div>
+            <div class="bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-[110]"></div>
         </div>
 
 
         <!-- Writereview-Modal -->
-        <div id="Writereview-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[500] w-full justify-center items-center md:inset-0 h-[calc(100%-2rem)] max-h-full">
-            <div class="relative overflow-y-auto max-w-[95%] md:max-w-[85%] lg:max-w-[1080px] bg-white rounded-lg shadow mx-auto h-[90vh]">
+        <div id="Writereview-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[100] w-full justify-center items-center md:inset-0 h-[calc(100%-2rem)] max-h-full">
+            <div class="relative z-[210] overflow-y-auto max-w-[95%] md:max-w-[85%] lg:max-w-[1080px] bg-white rounded-lg shadow mx-auto h-[90vh]">
                 <!-- Modal content -->
                 <div class="relative dark:bg-gray-700">
                     <!-- Modal header -->
@@ -1332,11 +1333,12 @@
                     </div>
                 </div>
             </div>
+            <div class="bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-[110]"></div>
         </div>
 
         <!-- AskAQuestion-Modal -->
-        <div id="AskAQuestion-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[500] w-full justify-center items-center md:inset-0 h-[calc(100%-2rem)] max-h-full">
-            <div class="relative  overflow-y-auto bg-white rounded-lg  max-w-[95%] md:max-w-[85%] lg:max-w-[1080px] mx-auto max-h-full">
+        <div id="AskAQuestion-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[100] w-full justify-center items-center md:inset-0 h-[calc(100%-2rem)] max-h-full">
+            <div class="relative z-[210] overflow-y-auto bg-white rounded-lg  max-w-[95%] md:max-w-[85%] lg:max-w-[1080px] mx-auto max-h-full">
                 <!-- Modal content -->
                 <div class="relative shadow dark:bg-gray-700">
                     <!-- Modal header -->
@@ -1396,15 +1398,18 @@
                     </div>
                 </div>
             </div>
+            <div class="bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-[110]"></div>
         </div>
 
-        <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-2rem)] max-h-full">
+        <!-- main model -->
+        <div id="kp-mainPop-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-2rem)] max-h-full">
             <div class="relative mt-6 w-full max-w-[1300px] max-h-full">
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <!-- Modal header -->
                     <div class="flex items-center justify-between p-2 rounded-t">
-                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="static-modal">
+                        <button id="kp-reviewMainPop-btn" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" 
+                            data-modal-hide="kp-mainPop-modal">
                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                             </svg>
@@ -1414,8 +1419,8 @@
                     <!-- Modal body -->
                     <div class="px-6 md:px-12 lg:px-24 pb-6 md:pb-12 lg:pb-24">
                         <div class="my-8">
-                            <button id="kpr-SiteReviews-btn" class="kp-tab-button kp-active-button text-[18px] lg:text-[28px] px-[24px] lg:px-[32px] py-[6px] lg:py-[14px] rounded-[10px]  mr-3 lg:mr-8 mt-5" >Site Review</button>
-                            <button id="kpr-ProductReviews-btn" class="kp-tab-button text-[18px] lg:text-[28px] px-[24px] lg:px-[32px] py-[6px] lg:py-[14px] rounded-[10px] mr-3 lg:mr-8 mt-5">Product Review</button>
+                            <button id="kpr-SiteReviews-btn" class="kpSP-tab-button kpSP-active-button kr-font-nimbusRomNo9L text-[18px] lg:text-[28px] px-[24px] lg:px-[32px] py-[6px] lg:py-[14px] rounded-[10px]  mr-3 lg:mr-8 mt-5" >Site Review</button>
+                            <button id="kpr-ProductReviews-btn" class="kpSP-tab-button kr-font-nimbusRomNo9L text-[18px] lg:text-[28px] px-[24px] lg:px-[32px] py-[6px] lg:py-[14px] rounded-[10px] mr-3 lg:mr-8 mt-5">Product Review</button>
                         </div>
                         <div id="kpr-SiteReviews-tab" class="block">
                             <div class="grid grid-cols-12 gap-4 ">
@@ -1507,14 +1512,14 @@
                                         <div class="col-span-12 lg:col-span-6">
                                             <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-4 ">
                                             <div>
-                                                <button data-modal-target="AskAQuestion-modal" data-modal-toggle="AskAQuestion-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
+                                                <button id="kas-askQues-btn" data-modal-target="AskAQuestion-modal" data-modal-toggle="AskAQuestion-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
                                                 <div class="h-[14px] w-[14px] mr-2.5">
                                                     <img src="/assets/images/edit.svg" alt="edit" width="100%" height="auto" />
                                                 </div>Ask A Question  
                                                 </button>
                                             </div>
                                             <div>
-                                                <button data-modal-target="Writereview-modal" data-modal-toggle="Writereview-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
+                                                <button id="kas-wrtRev-btn" data-modal-target="Writereview-modal" data-modal-toggle="Writereview-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
                                                 <div class="h-[14px] w-[14px] mr-2.5">
                                                     <img src="/assets/images/edit.svg" alt="edit" width="100%" height="auto" />
                                                 </div>Write A Review  
@@ -1563,7 +1568,7 @@
                                 </div>
                                 <div class="col-span-12 mt-10">
                                     <div class="grid grid-cols-12 ">
-                                        <div class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                             <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
                                                     <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -1627,7 +1632,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                             <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
                                                     <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -1691,7 +1696,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                             <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
                                                     <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -1755,7 +1760,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                             <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
                                                     <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -1819,7 +1824,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                             <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
                                                     <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -1883,7 +1888,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                             <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
                                                     <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -1947,7 +1952,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                             <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
                                                     <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -2011,7 +2016,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
                                             <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
                                                     <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
@@ -2092,667 +2097,667 @@
                                     <h3 class=" text-[50px] md:text-[80px] text-center kr-font-praise">Product Review</h3>
                                 </div>
                                 <div class="col-span-12">
-                        <div class="grid grid-cols-12 gap-4">
-                            <div class="col-span-12 lg:col-span-5">
-                                <div class="grid grid-cols-12 gap-3 items-center">
-                                <div class="col-span-3">
-                                    <h4 class="text-[50px] md:text-[80px] font-bold kr-font-nimbusRomNo9L m-0 leading-none	">4.5</h4>
-                                </div>
-                                <div class="ml-3 md:ml-5 col-span-9">
-                                    <div class="flex items-center mb-2">
-                                    <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
-                                        <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
-                                        <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
-                                        <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
-                                        <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
-                                        <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    </div>
-                                    <p class="text-[#9A9A9A] font-[16px] md:font-[18px]">984 Customer Reviews</p>
-                                </div>
-                                </div>
-                                <div>
-                                <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
-                                    <h5 class=" text-[30px] font-bold">5</h5>
-                                    <div class="h-[28px] w-[28px]">
-                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-[#252338] h-2.5 rounded-full" style="width: 85%"></div>
-                                    </div>
-                                    <p class="text-[16px] text-[#9A9A9A]">399</p>
-                                </div>
-                                <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
-                                    <h5 class="kr-font-nimbusRomNo9L text-[30px] font-bold">4</h5>
-                                    <div class="h-[28px] w-[28px]">
-                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-[#252338] h-2.5 rounded-full" style="width: 65%"></div>
-                                    </div>
-                                    <p class="text-[16px] text-[#9A9A9A]">130</p>
-                                </div>
-                                <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
-                                    <h5 class="kr-font-nimbusRomNo9L text-[30px] font-bold">3</h5>
-                                    <div class="h-[28px] w-[28px]">
-                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-[#252338] h-2.5 rounded-full" style="width: 25%"></div>
-                                    </div>
-                                    <p class="text-[16px] text-[#9A9A9A]">31</p>
-                                </div>
-                                <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
-                                    <h5 class="kr-font-nimbusRomNo9L text-[30px] font-bold">2</h5>
-                                    <div class="h-[28px] w-[28px]">
-                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-[#252338] h-2.5 rounded-full" style="width: 15%"></div>
-                                    </div>
-                                    <p class="text-[16px] text-[#9A9A9A]">21</p>
-                                </div>
-                                <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
-                                    <h5 class="kr-font-nimbusRomNo9L text-[30px] font-bold">1</h5>
-                                    <div class="h-[28px] w-[28px]">
-                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-[#252338] h-2.5 rounded-full" style="width: 10%"></div>
-                                    </div>
-                                    <p class="text-[16px] text-[#9A9A9A]">20</p>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-span-1 hidden lg:block h-[100%] w-[2px] bg-[#252338] ml-10"></div>
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-4 ">
-                                <div>
-                                    <button data-modal-target="AskAQuestion-modal" data-modal-toggle="AskAQuestion-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
-                                    <div class="h-[14px] w-[14px] mr-2.5">
-                                        <img src="/assets/images/edit.svg" alt="edit" width="100%" height="auto" />
-                                    </div>Ask A Question  
-                                    </button>
-                                </div>
-                                <div>
-                                    <button data-modal-target="Writereview-modal" data-modal-toggle="Writereview-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
-                                    <div class="h-[14px] w-[14px] mr-2.5">
-                                        <img src="/assets/images/edit.svg" alt="edit" width="100%" height="auto" />
-                                    </div>Write A Review  
-                                    </button>
-                                </div>
-                                <div class="relative">
-                                    <select class="text-[#252338] kr-font-nimbusRomNo9L border-2 border-[#252338] rounded-[6px] font-bold text-[16px] pl-7 pr-2.5 py-1 w-[97%] md:w-auto flex items-center justify-center">
-                                    <option selected>Filters</option>
-                                    <option value="Featured">Featured</option>
-                                    <option value="Newest">Newest</option>
-                                    <option value="Highest Rating">Highest Rating</option>
-                                    <option value="Lowest Rating">Lowest Rating</option>
-                                    </select>
-                                    <div class=" absolute top-2 left-2 h-[14px] w-[14px]">
-                                    <img src="/assets/images/filter.svg" alt="edit" width="100%" height="auto" />
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="w-[100%] mx-auto slick-carousel mt-10 ">
-                                <div>
-                                    <img src="/assets/images/reviewpage/carousel-1.svg" class="block w-[187px]" alt="...">
-                                </div>
-                                <div>
-                                    <img src="/assets/images/reviewpage/carousel-2.svg" class="block w-[187px]" alt="...">
-                                </div>
-                                <div>
-                                    <img src="/assets/images/reviewpage/carousel-3.svg" class="block w-[187px]" alt="...">
-                                </div>
-                                <div>
-                                    <img src="/assets/images/reviewpage/carousel-1.svg" class="block w-[187px]" alt="...">
-                                </div>
-                                <div>
-                                    <img src="/assets/images/reviewpage/carousel-2.svg" class="block w-[187px]" alt="...">
-                                </div>
-                                <div>
-                                    <img src="/assets/images/reviewpage/carousel-3.svg" class="block w-[187px]" alt="...">
-                                </div>
-                                </div>
-                                <div class="flex items-center mt-14 ">
-                                    <div class="w-[25%]  md:w-[35%] h-[2px] bg-[#252338]"></div>
-                                    <p class="w-[50%] md:w-[30%] text-center mx-2 md:mx-3 leading-[0px]">Recent Posts</p>
-                                    <div class="w-[25%] md:w-[35%] h-[2px] bg-[#252338]"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-12 mt-10">
-                        <div class="grid grid-cols-12 ">
-                            <div class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
-                                <div class="w-[233px] mx-auto drop-shadow-lg">
-                                    <div>
-                                        <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
-                                    </div>
-                                    <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
-                                        <div class="flex items-center">
-                                            <div class="mr-2.5">
-                                                <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
+                                    <div class="grid grid-cols-12 gap-4">
+                                        <div class="col-span-12 lg:col-span-5">
+                                            <div class="grid grid-cols-12 gap-3 items-center">
+                                            <div class="col-span-3">
+                                                <h4 class="text-[50px] md:text-[80px] font-bold kr-font-nimbusRomNo9L m-0 leading-none	">4.5</h4>
                                             </div>
-                                            <div class="">
-                                                <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                            <div class="ml-3 md:ml-5 col-span-9">
+                                                <div class="flex items-center mb-2">
+                                                <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
+                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
+                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
+                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
+                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                <div class="h-[20px] md:h-[40px] w-[20px] md:w-[40px] mr-5">
+                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                </div>
+                                                <p class="text-[#9A9A9A] font-[16px] md:font-[18px]">984 Customer Reviews</p>
+                                            </div>
+                                            </div>
+                                            <div>
+                                            <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
+                                                <h5 class=" text-[30px] font-bold">5</h5>
+                                                <div class="h-[28px] w-[28px]">
+                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                                <div class="bg-[#252338] h-2.5 rounded-full" style="width: 85%"></div>
+                                                </div>
+                                                <p class="text-[16px] text-[#9A9A9A]">399</p>
+                                            </div>
+                                            <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
+                                                <h5 class="kr-font-nimbusRomNo9L text-[30px] font-bold">4</h5>
+                                                <div class="h-[28px] w-[28px]">
+                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                                <div class="bg-[#252338] h-2.5 rounded-full" style="width: 65%"></div>
+                                                </div>
+                                                <p class="text-[16px] text-[#9A9A9A]">130</p>
+                                            </div>
+                                            <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
+                                                <h5 class="kr-font-nimbusRomNo9L text-[30px] font-bold">3</h5>
+                                                <div class="h-[28px] w-[28px]">
+                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                                <div class="bg-[#252338] h-2.5 rounded-full" style="width: 25%"></div>
+                                                </div>
+                                                <p class="text-[16px] text-[#9A9A9A]">31</p>
+                                            </div>
+                                            <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
+                                                <h5 class="kr-font-nimbusRomNo9L text-[30px] font-bold">2</h5>
+                                                <div class="h-[28px] w-[28px]">
+                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                                <div class="bg-[#252338] h-2.5 rounded-full" style="width: 15%"></div>
+                                                </div>
+                                                <p class="text-[16px] text-[#9A9A9A]">21</p>
+                                            </div>
+                                            <div class="flex items-center	kr-font-nimbusRomNo9L gap-3">
+                                                <h5 class="kr-font-nimbusRomNo9L text-[30px] font-bold">1</h5>
+                                                <div class="h-[28px] w-[28px]">
+                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                </div>
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                                <div class="bg-[#252338] h-2.5 rounded-full" style="width: 10%"></div>
+                                                </div>
+                                                <p class="text-[16px] text-[#9A9A9A]">20</p>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-1 hidden lg:block h-[100%] w-[2px] bg-[#252338] ml-10"></div>
+                                        <div class="col-span-12 lg:col-span-6">
+                                            <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-4 ">
+                                            <div>
+                                                <button id="kas-askQues-btn" data-modal-target="AskAQuestion-modal" data-modal-toggle="AskAQuestion-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
+                                                <div class="h-[14px] w-[14px] mr-2.5">
+                                                    <img src="/assets/images/edit.svg" alt="edit" width="100%" height="auto" />
+                                                </div>Ask A Question  
+                                                </button>
+                                            </div>
+                                            <div>
+                                                <button id="kas-wrtRev-btn" data-modal-target="Writereview-modal" data-modal-toggle="Writereview-modal" class="w-[97%] md:w-auto flex items-center justify-center text-[#fff] leading-[0px] kr-font-nimbusRomNo9L  bg-[#252338] rounded-[6px] font-bold text-[16px] px-2.5 py-2">
+                                                <div class="h-[14px] w-[14px] mr-2.5">
+                                                    <img src="/assets/images/edit.svg" alt="edit" width="100%" height="auto" />
+                                                </div>Write A Review  
+                                                </button>
+                                            </div>
+                                            <div class="relative">
+                                                <select class="text-[#252338] kr-font-nimbusRomNo9L border-2 border-[#252338] rounded-[6px] font-bold text-[16px] pl-7 pr-2.5 py-1 w-[97%] md:w-auto flex items-center justify-center">
+                                                <option selected>Filters</option>
+                                                <option value="Featured">Featured</option>
+                                                <option value="Newest">Newest</option>
+                                                <option value="Highest Rating">Highest Rating</option>
+                                                <option value="Lowest Rating">Lowest Rating</option>
+                                                </select>
+                                                <div class=" absolute top-2 left-2 h-[14px] w-[14px]">
+                                                <img src="/assets/images/filter.svg" alt="edit" width="100%" height="auto" />
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="w-[100%] mx-auto slick-carousel mt-10 ">
+                                            <div>
+                                                <img src="/assets/images/reviewpage/carousel-1.svg" class="block w-[187px]" alt="...">
+                                            </div>
+                                            <div>
+                                                <img src="/assets/images/reviewpage/carousel-2.svg" class="block w-[187px]" alt="...">
+                                            </div>
+                                            <div>
+                                                <img src="/assets/images/reviewpage/carousel-3.svg" class="block w-[187px]" alt="...">
+                                            </div>
+                                            <div>
+                                                <img src="/assets/images/reviewpage/carousel-1.svg" class="block w-[187px]" alt="...">
+                                            </div>
+                                            <div>
+                                                <img src="/assets/images/reviewpage/carousel-2.svg" class="block w-[187px]" alt="...">
+                                            </div>
+                                            <div>
+                                                <img src="/assets/images/reviewpage/carousel-3.svg" class="block w-[187px]" alt="...">
+                                            </div>
+                                            </div>
+                                            <div class="flex items-center mt-14 ">
+                                                <div class="w-[25%]  md:w-[35%] h-[2px] bg-[#252338]"></div>
+                                                <p class="w-[50%] md:w-[30%] text-center mx-2 md:mx-3 leading-[0px]">Recent Posts</p>
+                                                <div class="w-[25%] md:w-[35%] h-[2px] bg-[#252338]"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-span-12 mt-10">
+                                    <div class="grid grid-cols-12 ">
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                            <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
-                                                    <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
-                                                    <div>
-                                                        <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                    <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
+                                                </div>
+                                                <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
+                                                    <div class="flex items-center">
+                                                        <div class="mr-2.5">
+                                                            <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
+                                                        </div>
+                                                        <div class="">
+                                                            <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                                            <div>
+                                                                <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
+                                                                <div>
+                                                                    <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-2.5">
+                                                        <p class="reviewText text-[8px] font-light poppins">
+                                                            The Men's ComfortBlend T-Shirt is a true winner. Its soft, breathable fabric and perfect fit make it my husband's go-to for everyday wear. With its durability and versatile style, it's a must-have staple for any wardrobe. Highly recommended!
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex items-center justify-between mt-2.5">
+                                                        <div class="flex items-center">
+                                                            <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
+                                                            <div class="flex justify-between items-center">
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="flex items-center mr-2.5">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-2.5">
-                                            <p class="reviewText text-[8px] font-light poppins">
-                                                The Men's ComfortBlend T-Shirt is a true winner. Its soft, breathable fabric and perfect fit make it my husband's go-to for everyday wear. With its durability and versatile style, it's a must-have staple for any wardrobe. Highly recommended!
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <div class="flex items-center">
-                                                <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
-                                                <div class="flex justify-between items-center">
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex">
-                                                <div class="flex items-center mr-2.5">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                                <div class="flex items-center">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
-                                <div class="w-[233px] mx-auto drop-shadow-lg">
-                                    <div>
-                                        <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
-                                    </div>
-                                    <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
-                                        <div class="flex items-center">
-                                            <div class="mr-2.5">
-                                                <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
-                                            </div>
-                                            <div class="">
-                                                <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                            <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
-                                                    <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
-                                                    <div>
-                                                        <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                    <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
+                                                </div>
+                                                <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
+                                                    <div class="flex items-center">
+                                                        <div class="mr-2.5">
+                                                            <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
+                                                        </div>
+                                                        <div class="">
+                                                            <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                                            <div>
+                                                                <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
+                                                                <div>
+                                                                    <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-2.5">
+                                                        <p class="reviewText text-[8px] font-light poppins">
+                                                            versatile style, it's a must-have staple for any wardrobe. Highly recommended!
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex items-center justify-between mt-2.5">
+                                                        <div class="flex items-center">
+                                                            <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
+                                                            <div class="flex justify-between items-center">
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="flex items-center mr-2.5">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-2.5">
-                                            <p class="reviewText text-[8px] font-light poppins">
-                                                versatile style, it's a must-have staple for any wardrobe. Highly recommended!
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <div class="flex items-center">
-                                                <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
-                                                <div class="flex justify-between items-center">
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex">
-                                                <div class="flex items-center mr-2.5">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                                <div class="flex items-center">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
-                                <div class="w-[233px] mx-auto drop-shadow-lg">
-                                    <div>
-                                        <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
-                                    </div>
-                                    <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
-                                        <div class="flex items-center">
-                                            <div class="mr-2.5">
-                                                <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
-                                            </div>
-                                            <div class="">
-                                                <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                            <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
-                                                    <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
-                                                    <div>
-                                                        <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                    <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
+                                                </div>
+                                                <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
+                                                    <div class="flex items-center">
+                                                        <div class="mr-2.5">
+                                                            <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
+                                                        </div>
+                                                        <div class="">
+                                                            <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                                            <div>
+                                                                <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
+                                                                <div>
+                                                                    <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-2.5">
+                                                        <p class="reviewText text-[8px] font-light poppins">
+                                                            The Men's ComfortBlend T-Shirt is a true winner. Its soft, breathable fabric and perfect fit make it my husband's go-to for everyday wear. With its durability and versatile style, it's a must-have staple for any wardrobe. Highly recommended!
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex items-center justify-between mt-2.5">
+                                                        <div class="flex items-center">
+                                                            <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
+                                                            <div class="flex justify-between items-center">
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="flex items-center mr-2.5">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-2.5">
-                                            <p class="reviewText text-[8px] font-light poppins">
-                                                The Men's ComfortBlend T-Shirt is a true winner. Its soft, breathable fabric and perfect fit make it my husband's go-to for everyday wear. With its durability and versatile style, it's a must-have staple for any wardrobe. Highly recommended!
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <div class="flex items-center">
-                                                <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
-                                                <div class="flex justify-between items-center">
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex">
-                                                <div class="flex items-center mr-2.5">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                                <div class="flex items-center">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
-                                <div class="w-[233px] mx-auto drop-shadow-lg">
-                                    <div>
-                                        <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
-                                    </div>
-                                    <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
-                                        <div class="flex items-center">
-                                            <div class="mr-2.5">
-                                                <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
-                                            </div>
-                                            <div class="">
-                                                <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                            <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
-                                                    <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
-                                                    <div>
-                                                        <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                    <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
+                                                </div>
+                                                <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
+                                                    <div class="flex items-center">
+                                                        <div class="mr-2.5">
+                                                            <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
+                                                        </div>
+                                                        <div class="">
+                                                            <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                                            <div>
+                                                                <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
+                                                                <div>
+                                                                    <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-2.5">
+                                                        <p class="reviewText text-[8px] font-light poppins">
+                                                            versatile style, it's a must-have staple for any wardrobe. Highly recommended!
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex items-center justify-between mt-2.5">
+                                                        <div class="flex items-center">
+                                                            <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
+                                                            <div class="flex justify-between items-center">
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="flex items-center mr-2.5">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-2.5">
-                                            <p class="reviewText text-[8px] font-light poppins">
-                                                versatile style, it's a must-have staple for any wardrobe. Highly recommended!
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <div class="flex items-center">
-                                                <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
-                                                <div class="flex justify-between items-center">
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex">
-                                                <div class="flex items-center mr-2.5">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                                <div class="flex items-center">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
-                                <div class="w-[233px] mx-auto drop-shadow-lg">
-                                    <div>
-                                        <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
-                                    </div>
-                                    <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
-                                        <div class="flex items-center">
-                                            <div class="mr-2.5">
-                                                <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
-                                            </div>
-                                            <div class="">
-                                                <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal  col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                            <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
-                                                    <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
-                                                    <div>
-                                                        <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                    <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
+                                                </div>
+                                                <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
+                                                    <div class="flex items-center">
+                                                        <div class="mr-2.5">
+                                                            <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
+                                                        </div>
+                                                        <div class="">
+                                                            <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                                            <div>
+                                                                <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
+                                                                <div>
+                                                                    <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-2.5">
+                                                        <p class="reviewText text-[8px] font-light poppins">
+                                                            The Men's ComfortBlend T-Shirt is a true winner. Its soft, breathable fabric and perfect fit make it my husband's go-to for everyday wear. With its durability and versatile style, it's a must-have staple for any wardrobe. Highly recommended!
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex items-center justify-between mt-2.5">
+                                                        <div class="flex items-center">
+                                                            <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
+                                                            <div class="flex justify-between items-center">
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="flex items-center mr-2.5">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-2.5">
-                                            <p class="reviewText text-[8px] font-light poppins">
-                                                The Men's ComfortBlend T-Shirt is a true winner. Its soft, breathable fabric and perfect fit make it my husband's go-to for everyday wear. With its durability and versatile style, it's a must-have staple for any wardrobe. Highly recommended!
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <div class="flex items-center">
-                                                <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
-                                                <div class="flex justify-between items-center">
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex">
-                                                <div class="flex items-center mr-2.5">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                                <div class="flex items-center">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
-                                <div class="w-[233px] mx-auto drop-shadow-lg">
-                                    <div>
-                                        <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
-                                    </div>
-                                    <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
-                                        <div class="flex items-center">
-                                            <div class="mr-2.5">
-                                                <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
-                                            </div>
-                                            <div class="">
-                                                <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                            <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
-                                                    <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
-                                                    <div>
-                                                        <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                    <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
+                                                </div>
+                                                <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
+                                                    <div class="flex items-center">
+                                                        <div class="mr-2.5">
+                                                            <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
+                                                        </div>
+                                                        <div class="">
+                                                            <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                                            <div>
+                                                                <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
+                                                                <div>
+                                                                    <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-2.5">
+                                                        <p class="reviewText text-[8px] font-light poppins">
+                                                            versatile style, it's a must-have staple for any wardrobe. Highly recommended!
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex items-center justify-between mt-2.5">
+                                                        <div class="flex items-center">
+                                                            <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
+                                                            <div class="flex justify-between items-center">
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="flex items-center mr-2.5">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-2.5">
-                                            <p class="reviewText text-[8px] font-light poppins">
-                                                versatile style, it's a must-have staple for any wardrobe. Highly recommended!
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <div class="flex items-center">
-                                                <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
-                                                <div class="flex justify-between items-center">
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex">
-                                                <div class="flex items-center mr-2.5">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                                <div class="flex items-center">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
-                                <div class="w-[233px] mx-auto drop-shadow-lg">
-                                    <div>
-                                        <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
-                                    </div>
-                                    <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
-                                        <div class="flex items-center">
-                                            <div class="mr-2.5">
-                                                <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
-                                            </div>
-                                            <div class="">
-                                                <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                            <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
-                                                    <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
-                                                    <div>
-                                                        <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                    <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
+                                                </div>
+                                                <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
+                                                    <div class="flex items-center">
+                                                        <div class="mr-2.5">
+                                                            <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
+                                                        </div>
+                                                        <div class="">
+                                                            <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                                            <div>
+                                                                <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
+                                                                <div>
+                                                                    <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-2.5">
+                                                        <p class="reviewText text-[8px] font-light poppins">
+                                                            The Men's ComfortBlend T-Shirt is a true winner. Its soft, breathable fabric and perfect fit make it my husband's go-to for everyday wear. With its durability and versatile style, it's a must-have staple for any wardrobe. Highly recommended!
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex items-center justify-between mt-2.5">
+                                                        <div class="flex items-center">
+                                                            <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
+                                                            <div class="flex justify-between items-center">
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="flex items-center mr-2.5">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-2.5">
-                                            <p class="reviewText text-[8px] font-light poppins">
-                                                The Men's ComfortBlend T-Shirt is a true winner. Its soft, breathable fabric and perfect fit make it my husband's go-to for everyday wear. With its durability and versatile style, it's a must-have staple for any wardrobe. Highly recommended!
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <div class="flex items-center">
-                                                <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
-                                                <div class="flex justify-between items-center">
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex">
-                                                <div class="flex items-center mr-2.5">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                                <div class="flex items-center">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
-                                <div class="w-[233px] mx-auto drop-shadow-lg">
-                                    <div>
-                                        <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
-                                    </div>
-                                    <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
-                                        <div class="flex items-center">
-                                            <div class="mr-2.5">
-                                                <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
-                                            </div>
-                                            <div class="">
-                                                <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                        <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal" class="ka-prodcutReview-modal col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+                                            <div class="w-[233px] mx-auto drop-shadow-lg">
                                                 <div>
-                                                    <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
-                                                    <div>
-                                                        <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                    <img class="rounded-tl-[10px] rounded-tr-[10px]" src="/assets/images/reviewpage/c-1.svg" alt="review" width="auto" height="320px" />
+                                                </div>
+                                                <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
+                                                    <div class="flex items-center">
+                                                        <div class="mr-2.5">
+                                                            <img src="/assets/images/reviewpage/p-1.svg" alt="profile" class="w-[30px] h-[30px]" />
+                                                        </div>
+                                                        <div class="">
+                                                            <h4 class="text-[14px] poppins font-[400]">Erica Stone</h4>
+                                                            <div>
+                                                                <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">22 Mar 2023</p>
+                                                                <div>
+                                                                    <img src="/assets/images/reviewpage/flag.svg" alt="flag" class="w-[10px] h-[10px]" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-2.5">
+                                                        <p class="reviewText text-[8px] font-light poppins">
+                                                            versatile style, it's a must-have staple for any wardrobe. Highly recommended!
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex items-center justify-between mt-2.5">
+                                                        <div class="flex items-center">
+                                                            <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
+                                                            <div class="flex justify-between items-center">
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            <div class="h-[10px] w-[10px]">
+                                                                <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="flex items-center mr-2.5">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                            <div class="mr-1">
+                                                                <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
+                                                            </div>
+                                                            <p class="text-[10px] poppins">36</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-2.5">
-                                            <p class="reviewText text-[8px] font-light poppins">
-                                                versatile style, it's a must-have staple for any wardrobe. Highly recommended!
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-between mt-2.5">
-                                            <div class="flex items-center">
-                                                <h6 class="mb-0 mr-2.5 text-[8px] poppins">5.0</h6>
-                                                <div class="flex justify-between items-center">
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                <div class="h-[10px] w-[10px]">
-                                                    <img src="/assets/images/star.svg" alt="start" width="100%" height="auto" />
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex">
-                                                <div class="flex items-center mr-2.5">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                                <div class="flex items-center">
-                                                <div class="mr-1">
-                                                    <img src="/assets/images/reviewpage/like.svg" class="rotate-180" alt="like" width="10px" height="10px"/>
-                                                </div>
-                                                <p class="text-[10px] poppins">36</p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-12 mt-20">
-                        <div class="flex items-center justify-center">
-                        <div class="w-[40%] md:w-[240px] h-[2px] bg-[#252338]"></div>
-                        <p class="text-center mx-5 leading-[0px]">Load More</p>
-                        <div class="w-[40%] md:w-[240px]  h-[2px] bg-[#252338]"></div>
-                        </div>
-                    </div>
+                                <div class="col-span-12 mt-20">
+                                    <div class="flex items-center justify-center">
+                                    <div class="w-[40%] md:w-[240px] h-[2px] bg-[#252338]"></div>
+                                    <p class="text-center mx-5 leading-[0px]">Load More</p>
+                                    <div class="w-[40%] md:w-[240px]  h-[2px] bg-[#252338]"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to toggle between tabs
     function toggleTabs(activeBtn, activeTab, inactiveBtn, inactiveTab) {
-        activeBtn.classList.add('kp-active-button');
-        inactiveBtn.classList.remove('kp-active-button');
+        activeBtn.classList.add('kpSP-active-button');
+        inactiveBtn.classList.remove('kpSP-active-button');
 
         activeTab.classList.remove('hidden');
         inactiveTab.classList.add('hidden');
