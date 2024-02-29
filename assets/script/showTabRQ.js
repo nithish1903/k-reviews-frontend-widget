@@ -1,4 +1,4 @@
-function showTabKP(tabId, buttonId,tab,activeTab,btn,activeBtn) {
+function showTabKP(tabId,buttonId,tab,activeTab,btn,activeBtn) {
     // Hide all tabs
     var tabs = document.getElementsByClassName(tab);
     for (var i = 0; i < tabs.length; i++) {
