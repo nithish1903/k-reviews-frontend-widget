@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"encoding/json"
+	"fmt"
 	"k-reviews-frontend-api/entity"
 	"os"
 
@@ -31,12 +32,17 @@ func FetchProductInfo(productId int64, account entity.Account) (entity.ProductIn
 	if err != nil {
 		return entity.ProductInfo{}, err
 	}
+	var productURL = ""
+	if product.Handle != "" {
+		productURL = fmt.Sprintf("%s/products/%s", account.WebUrl, product.Handle)
+	}
 
 	if product != nil {
 		productInfo := entity.ProductInfo{
 			AccountID: account.ID,
 			ProductID: product.ID,
 			Name:      product.Title,
+			PageURL:   productURL,
 			Status:    "1",
 		}
 		return productInfo, nil

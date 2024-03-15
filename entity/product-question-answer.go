@@ -11,10 +11,7 @@ type ProductQuestionAnswer struct {
 	ID        primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"` // Primary key
 	AccountID string             `json:"account_id" bson:"account_id"`
 	ProductID int64              `json:"product_id" bson:"product_id"`
-	User      string             `json:"user" bson:"user"`
-	Name      string             `json:"name" bson:"name"`
-	Email     string             `json:"email" bson:"email"`
-	Address   Address            `json:"address" bson:"address"`
+	User      User               `json:"user" bson:"user"`
 	Question  string             `json:"question" bson:"question"`
 	Answer    []Answer           `json:"answer" bson:"answer"`
 	VoteID    primitive.ObjectID `json:"vote_id" bson:"vote_id"`

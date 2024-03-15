@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/labstack/echo"
+	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -18,7 +18,7 @@ import (
 	"go.uber.org/zap"
 )
 
-func SaveProductReviewsHandler(c echo.Context) error {
+func SaveProductReviewsHandler(c *gin.Context) {
 	zap.L().Info("SaveProductReviewsHandler called..!")
 
 	// Parse JSON request body into a Person struct.
@@ -35,7 +35,7 @@ func SaveProductReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusBadRequest, response)
+		c.JSON(http.StatusBadRequest, response)
 	}
 
 	account, err := usecase.GetAccountById(productReview.AccountID)
@@ -48,7 +48,7 @@ func SaveProductReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusNotFound, response)
+		c.JSON(http.StatusNotFound, response)
 	}
 	zap.L().Info("account details:", zap.Any("account:", account))
 
@@ -62,7 +62,7 @@ func SaveProductReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusNotFound, response)
+		c.JSON(http.StatusNotFound, response)
 	}
 
 	productInfo, err := usecase.FetchProductInfo(productReview.ProductID, *account)
@@ -75,7 +75,7 @@ func SaveProductReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
 	}
 
 	bsonProductInfo, _ := bson.Marshal(productInfo)
@@ -90,7 +90,7 @@ func SaveProductReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
 	}
 
 	productReview.Status = constant.REVIEW_STATUS_PENDING
@@ -107,7 +107,7 @@ func SaveProductReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
 	}
 
 	insert = mongodb.InsertOne(mongoCon.Connection, constant.K_REVIEWS_DB, constant.PRODUCT_REVIEWS_COLLECTION, bsonProductReview)
@@ -121,7 +121,7 @@ func SaveProductReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
 	}
 	zap.L().Info("Product review saved successfully")
 
@@ -134,10 +134,10 @@ func SaveProductReviewsHandler(c echo.Context) error {
 		Error:      nil,
 		Timestamp:  time.Now().UTC(),
 	}
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func SaveVotesHandler(c echo.Context) error {
+func SaveVotesHandler(c *gin.Context) {
 	zap.L().Info("SaveVotes called..!")
 
 	// Parse JSON request body into a Person struct.
@@ -153,7 +153,7 @@ func SaveVotesHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusBadRequest, response)
+		c.JSON(http.StatusBadRequest, response)
 	}
 
 	// Convert Product_reviews struct to BSON document.
@@ -167,7 +167,7 @@ func SaveVotesHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
 	}
 	zap.L().Info("bsonVotes:", zap.Any("bsonVotes:", bsonVotes))
 
@@ -182,7 +182,7 @@ func SaveVotesHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
 	}
 	zap.L().Info("Votes saved successfully")
 
@@ -195,10 +195,10 @@ func SaveVotesHandler(c echo.Context) error {
 		Error:      nil,
 		Timestamp:  time.Now().UTC(),
 	}
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func SaveSiteReviewsHandler(c echo.Context) error {
+func SaveSiteReviewsHandler(c *gin.Context) {
 	zap.L().Info("SaveSiteReviewsHandler called..!")
 
 	// Parse JSON request body into a Person struct.
@@ -214,7 +214,7 @@ func SaveSiteReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusBadRequest, response)
+		c.JSON(http.StatusBadRequest, response)
 	}
 
 	siteReview.Status = constant.REVIEW_STATUS_PENDING
@@ -230,7 +230,7 @@ func SaveSiteReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
 	}
 	zap.L().Info("siteReview:", zap.Any("siteReview:", siteReview))
 
@@ -245,7 +245,8 @@ func SaveSiteReviewsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
+
 	}
 	zap.L().Info("site review saved successfully")
 
@@ -258,10 +259,10 @@ func SaveSiteReviewsHandler(c echo.Context) error {
 		Error:      nil,
 		Timestamp:  time.Now().UTC(),
 	}
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func SaveProductQuestionAnswersHandler(c echo.Context) error {
+func SaveProductQuestionAnswersHandler(c *gin.Context) {
 	zap.L().Info("SaveProductQuestionAnswersHandler called..!")
 
 	// Parse JSON request body into a Person struct.
@@ -277,7 +278,7 @@ func SaveProductQuestionAnswersHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusBadRequest, response)
+		c.JSON(http.StatusBadRequest, response)
 	}
 
 	account, err := usecase.GetAccountById(reviewQuestion.AccountID)
@@ -290,7 +291,7 @@ func SaveProductQuestionAnswersHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusNotFound, response)
+		c.JSON(http.StatusNotFound, response)
 	}
 	zap.L().Info("account details:", zap.Any("account:", account))
 
@@ -304,7 +305,7 @@ func SaveProductQuestionAnswersHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusNotFound, response)
+		c.JSON(http.StatusNotFound, response)
 	}
 
 	productInfo, err := usecase.FetchProductInfo(reviewQuestion.ProductID, *account)
@@ -317,7 +318,8 @@ func SaveProductQuestionAnswersHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
+
 	}
 
 	bsonProductInfo, _ := bson.Marshal(productInfo)
@@ -332,7 +334,8 @@ func SaveProductQuestionAnswersHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
+
 	}
 
 	reviewQuestion.Status = constant.REVIEW_STATUS_PENDING
@@ -348,7 +351,7 @@ func SaveProductQuestionAnswersHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
 	}
 	zap.L().Info("ReviewQuestion:", zap.Any("ReviewQuestion:", reviewQuestion))
 
@@ -363,7 +366,7 @@ func SaveProductQuestionAnswersHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusInternalServerError, response)
+		c.JSON(http.StatusInternalServerError, response)
 	}
 	zap.L().Info("Product QA saved successfully")
 
@@ -376,20 +379,23 @@ func SaveProductQuestionAnswersHandler(c echo.Context) error {
 		Error:      nil,
 		Timestamp:  time.Now().UTC(),
 	}
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func GetProductReviewsDataHandler(c echo.Context) error {
+func GetProductReviewsDataHandler(c *gin.Context) {
 	zap.L().Info("GetProductReviewsDataHandler called..!")
 
-	page, err := strconv.Atoi(c.QueryParam("page"))
+	page, err := strconv.Atoi(c.Query("page"))
 	if err != nil || page < 1 {
 		page = 1
 	}
 
-	accountId := c.Get("account_id").(string)
-	productIdStr := c.QueryParam("productId")
-	filterType := c.QueryParam("filterType")
+	accountId, ok := c.Get("account_id")
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
+	}
+	productIdStr := c.Query("productId")
+	filterType := c.Query("filterType")
 
 	mongoCon := mongodb.MongoConnect()
 
@@ -401,7 +407,6 @@ func GetProductReviewsDataHandler(c echo.Context) error {
 		productId, err = strconv.ParseInt(productIdStr, 10, 64)
 		if err != nil {
 			zap.L().Error("Error parsing productId:", zap.Any("error:", err))
-			return err
 		}
 	}
 	var filter bson.M
@@ -438,7 +443,6 @@ func GetProductReviewsDataHandler(c echo.Context) error {
 	results, total, err := mongodb.GetReviewsDocumentsOnPagination(mongoCon.Connection, constant.K_REVIEWS_DB, constant.PRODUCT_REVIEWS_COLLECTION, constant.VOTES_COLLECTION, filter, options, int64(limit), int64(skip))
 	if err != nil {
 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-		return err
 	}
 	zap.L().Info("ratingCounts:", zap.Any("filter:", filter))
 
@@ -490,14 +494,18 @@ func GetProductReviewsDataHandler(c echo.Context) error {
 	}
 	zap.L().Info("sending sent:", zap.Any("response:", response))
 
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func GetProductReviewDetailsHandler(c echo.Context) error {
+func GetProductReviewDetailsHandler(c *gin.Context) {
 	zap.L().Info("GetProductReviewDetailsHandler called..!")
 
-	accountId := c.Get("account_id").(string)
-	productReviewIdStr := c.QueryParam("id")
+	accountId, ok := c.Get("account_id")
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
+
+	}
+	productReviewIdStr := c.Query("id")
 
 	mongoCon := mongodb.MongoConnect()
 	productReviewId, err := primitive.ObjectIDFromHex(productReviewIdStr)
@@ -516,13 +524,12 @@ func GetProductReviewDetailsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusBadRequest, response)
+		c.JSON(http.StatusBadRequest, response)
 	}
 
 	results, err := mongodb.GetDocuments(mongoCon.Connection, constant.K_REVIEWS_DB, constant.PRODUCT_REVIEWS_COLLECTION, filter)
 	if err != nil {
 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-		return err
 	}
 	response := entity.ReviewResponse{
 		Message:    "Success",
@@ -532,19 +539,23 @@ func GetProductReviewDetailsHandler(c echo.Context) error {
 		Error:      nil,
 		Timestamp:  time.Now().UTC(),
 	}
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func GetProductReviewImgagesHandler(c echo.Context) error {
+func GetProductReviewImgagesHandler(c *gin.Context) {
 	zap.L().Info("GetProductReviewImgagesHandler called..!")
 
-	page, err := strconv.Atoi(c.QueryParam("page"))
+	page, err := strconv.Atoi(c.Query("page"))
 	if err != nil || page < 1 {
 		page = 1
 	}
 
-	accountId := c.Get("account_id").(string)
-	productIdStr := c.QueryParam("productId")
+	accountId, ok := c.Get("account_id")
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
+
+	}
+	productIdStr := c.Query("productId")
 
 	mongoCon := mongodb.MongoConnect()
 
@@ -557,7 +568,6 @@ func GetProductReviewImgagesHandler(c echo.Context) error {
 		productId, err = strconv.ParseInt(productIdStr, 10, 64)
 		if err != nil {
 			zap.L().Error("Error parsing productId:", zap.Any("error:", err))
-			return err
 		}
 	}
 	projection := bson.M{"media_uploads": 1}
@@ -572,7 +582,6 @@ func GetProductReviewImgagesHandler(c echo.Context) error {
 	results, total, err := mongodb.GetDocumentsOnPagination(mongoCon.Connection, constant.K_REVIEWS_DB, constant.PRODUCT_REVIEWS_COLLECTION, filter, projection, options, int64(limit), int64(skip))
 	if err != nil {
 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-		return err
 	}
 	pagination := &entity.Pagination{
 		Total:   total,
@@ -588,14 +597,18 @@ func GetProductReviewImgagesHandler(c echo.Context) error {
 		Error:      nil,
 		Timestamp:  time.Now().UTC(),
 	}
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func GetProductReviewStatisticsHandler(c echo.Context) error {
+func GetProductReviewStatisticsHandler(c *gin.Context) {
 	zap.L().Info("GetProductReviewStatisticsHandler called..!")
 
-	accountId := c.Get("account_id").(string)
-	productIdStr := c.QueryParam("productId")
+	accountId, ok := c.Get("account_id")
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
+
+	}
+	productIdStr := c.Query("productId")
 
 	mongoCon := mongodb.MongoConnect()
 
@@ -605,7 +618,6 @@ func GetProductReviewStatisticsHandler(c echo.Context) error {
 		productId, err = strconv.ParseInt(productIdStr, 10, 64)
 		if err != nil {
 			zap.L().Error("Error parsing productId:", zap.Any("error:", err))
-			return err
 		}
 	}
 	var filter bson.M
@@ -620,7 +632,7 @@ func GetProductReviewStatisticsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusBadRequest, response)
+		c.JSON(http.StatusBadRequest, response)
 	}
 	pipeline := mongo.Pipeline{
 		{{Key: "$match", Value: filter}},
@@ -668,20 +680,24 @@ func GetProductReviewStatisticsHandler(c echo.Context) error {
 	}
 	zap.L().Info("sending sent:", zap.Any("response:", response))
 
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func GetSiteReviewsDataHandler(c echo.Context) error {
+func GetSiteReviewsDataHandler(c *gin.Context) {
 	zap.L().Info("GetSiteReviewsDataHandler called..!")
 
-	page, err := strconv.Atoi(c.QueryParam("page"))
+	page, err := strconv.Atoi(c.Query("page"))
 	if err != nil || page < 1 {
 		page = 1
 	}
 
-	accountId := c.Get("account_id").(string)
-	productIdStr := c.QueryParam("productId")
-	filterType := c.QueryParam("filterType")
+	accountId, ok := c.Get("account_id")
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
+
+	}
+	productIdStr := c.Query("productId")
+	filterType := c.Query("filterType")
 
 	mongoCon := mongodb.MongoConnect()
 
@@ -693,7 +709,6 @@ func GetSiteReviewsDataHandler(c echo.Context) error {
 		productId, err = strconv.ParseInt(productIdStr, 10, 64)
 		if err != nil {
 			zap.L().Error("Error parsing productId:", zap.Any("error:", err))
-			return err
 		}
 	}
 	var filter bson.M
@@ -730,7 +745,6 @@ func GetSiteReviewsDataHandler(c echo.Context) error {
 	results, total, err := mongodb.GetReviewsDocumentsOnPagination(mongoCon.Connection, constant.K_REVIEWS_DB, constant.SITE_REVIEWS_COLLECTION, constant.VOTES_COLLECTION, filter, options, int64(limit), int64(skip))
 	if err != nil {
 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-		return err
 	}
 	zap.L().Info("ratingCounts:", zap.Any("filter:", filter))
 
@@ -782,19 +796,23 @@ func GetSiteReviewsDataHandler(c echo.Context) error {
 	}
 	zap.L().Info("sending sent:", zap.Any("response:", response))
 
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func GetSiteReviewImgagesHandler(c echo.Context) error {
+func GetSiteReviewImgagesHandler(c *gin.Context) {
 	zap.L().Info("GetProductReviewImgagesHandler called..!")
 
-	page, err := strconv.Atoi(c.QueryParam("page"))
+	page, err := strconv.Atoi(c.Query("page"))
 	if err != nil || page < 1 {
 		page = 1
 	}
 
-	accountId := c.Get("account_id").(string)
-	productIdStr := c.QueryParam("productId")
+	accountId, ok := c.Get("account_id")
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
+
+	}
+	productIdStr := c.Query("productId")
 
 	mongoCon := mongodb.MongoConnect()
 
@@ -807,7 +825,7 @@ func GetSiteReviewImgagesHandler(c echo.Context) error {
 		productId, err = strconv.ParseInt(productIdStr, 10, 64)
 		if err != nil {
 			zap.L().Error("Error parsing productId:", zap.Any("error:", err))
-			return err
+
 		}
 	}
 	projection := bson.M{"media_uploads": 1}
@@ -822,7 +840,7 @@ func GetSiteReviewImgagesHandler(c echo.Context) error {
 	results, total, err := mongodb.GetDocumentsOnPagination(mongoCon.Connection, constant.K_REVIEWS_DB, constant.PRODUCT_REVIEWS_COLLECTION, filter, projection, options, int64(limit), int64(skip))
 	if err != nil {
 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-		return err
+
 	}
 	pagination := &entity.Pagination{
 		Total:   total,
@@ -838,14 +856,18 @@ func GetSiteReviewImgagesHandler(c echo.Context) error {
 		Error:      nil,
 		Timestamp:  time.Now().UTC(),
 	}
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func GetSiteReviewDetailsHandler(c echo.Context) error {
+func GetSiteReviewDetailsHandler(c *gin.Context) {
 	zap.L().Info("GetSiteReviewDetailsHandler called..!")
 
-	accountId := c.Get("account_id").(string)
-	siteReviewIdStr := c.QueryParam("id")
+	accountId, ok := c.Get("account_id")
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
+
+	}
+	siteReviewIdStr := c.Query("id")
 
 	mongoCon := mongodb.MongoConnect()
 	siteReviewId, err := primitive.ObjectIDFromHex(siteReviewIdStr)
@@ -864,13 +886,13 @@ func GetSiteReviewDetailsHandler(c echo.Context) error {
 			Error:      nil,
 			Timestamp:  time.Now().UTC(),
 		}
-		return c.JSON(http.StatusBadRequest, response)
+		c.JSON(http.StatusBadRequest, response)
 	}
 
 	results, err := mongodb.GetDocuments(mongoCon.Connection, constant.K_REVIEWS_DB, constant.SITE_REVIEWS_COLLECTION, filter)
 	if err != nil {
 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-		return err
+
 	}
 	response := entity.ReviewResponse{
 		Message:    "Success",
@@ -880,19 +902,23 @@ func GetSiteReviewDetailsHandler(c echo.Context) error {
 		Error:      nil,
 		Timestamp:  time.Now().UTC(),
 	}
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-func GetProductQADataHandler(c echo.Context) error {
+func GetProductQADataHandler(c *gin.Context) {
 	zap.L().Info("GetProductQADataHandler called..!")
 
-	page, err := strconv.Atoi(c.QueryParam("page"))
+	page, err := strconv.Atoi(c.Query("page"))
 	if err != nil || page < 1 {
 		page = 1
 	}
 
-	accountId := c.Get("account_id").(string)
-	productIdStr := c.QueryParam("productId")
+	accountId, ok := c.Get("account_id")
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
+
+	}
+	productIdStr := c.Query("productId")
 
 	mongoCon := mongodb.MongoConnect()
 
@@ -904,7 +930,7 @@ func GetProductQADataHandler(c echo.Context) error {
 		productId, err = strconv.ParseInt(productIdStr, 10, 64)
 		if err != nil {
 			zap.L().Error("Error parsing productId:", zap.Any("error:", err))
-			return err
+
 		}
 	}
 	var filter bson.M
@@ -921,7 +947,7 @@ func GetProductQADataHandler(c echo.Context) error {
 	results, total, err := mongodb.GetProductReviewsQaDocumentsOnPagination(mongoCon.Connection, constant.K_REVIEWS_DB, constant.PRODUCT_QA_COLLECTION, constant.VOTES_COLLECTION, filter, options, int64(limit), int64(skip))
 	if err != nil {
 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-		return err
+
 	}
 	zap.L().Info("ratingCounts:", zap.Any("filter:", filter))
 
@@ -944,13 +970,13 @@ func GetProductQADataHandler(c echo.Context) error {
 	}
 	zap.L().Info("sending sent:", zap.Any("response:", response))
 
-	return c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, response)
 }
 
-// func GetSiteReviewsDataHandler(c echo.Context) error {
+// func GetSiteReviewsDataHandler(c *gin.Context){
 // 	zap.L().Info("GetSiteReviewsDataHandler called..!")
 
-// 	page, err := strconv.Atoi(c.QueryParam("page"))
+// 	page, err := strconv.Atoi(c.Query("page"))
 // 	if err != nil || page < 1 {
 // 		page = 1
 // 	}
@@ -969,7 +995,7 @@ func GetProductQADataHandler(c echo.Context) error {
 // 	results, total, err := mongodb.GetDocumentsOnPagination(mongoCon.Connection, constant.K_REVIEWS_DB, constant.SITE_REVIEWS_COLLECTION, bson.M{"account_id": fmt.Sprint(accountId)}, int64(limit), int64(skip))
 // 	if err != nil {
 // 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-// 		return err
+//
 // 	}
 // 	pagination := &entity.Pagination{
 // 		Total:   total,
@@ -985,13 +1011,13 @@ func GetProductQADataHandler(c echo.Context) error {
 // 		Error:      nil,
 // 		Timestamp:  time.Now().UTC(),
 // 	}
-// 	return c.JSON(http.StatusOK, response)
+// 	c.JSON(http.StatusOK, response)
 // }
 
-// func GetProductQuestionAndAnswersDataHandler(c echo.Context) error {
+// func GetProductQuestionAndAnswersDataHandler(c *gin.Context){
 // 	zap.L().Info("GetProductQuestionAndAnswersDataHandler called..!")
 
-// 	page, err := strconv.Atoi(c.QueryParam("page"))
+// 	page, err := strconv.Atoi(c.Query("page"))
 // 	if err != nil || page < 1 {
 // 		page = 1
 // 	}
@@ -1010,7 +1036,7 @@ func GetProductQADataHandler(c echo.Context) error {
 // 	results, total, err := mongodb.GetDocumentsOnPagination(mongoCon.Connection, constant.K_REVIEWS_DB, constant.PRODUCT_QA_COLLECTION, bson.M{"account_id": fmt.Sprint(accountId)}, int64(limit), int64(skip))
 // 	if err != nil {
 // 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-// 		return err
+//
 // 	}
 // 	pagination := &entity.Pagination{
 // 		Total:   total,
@@ -1027,13 +1053,13 @@ func GetProductQADataHandler(c echo.Context) error {
 // 		Error:      nil,
 // 		Timestamp:  time.Now().UTC(),
 // 	}
-// 	return c.JSON(http.StatusOK, response)
+// 	c.JSON(http.StatusOK, response)
 // }
 
-// func GetVotesDataHandler(c echo.Context) error {
+// func GetVotesDataHandler(c *gin.Context){
 // 	zap.L().Info("GetVotesDataHandler called..!")
 
-// 	page, err := strconv.Atoi(c.QueryParam("page"))
+// 	page, err := strconv.Atoi(c.Query("page"))
 // 	if err != nil || page < 1 {
 // 		page = 1
 // 	}
@@ -1052,7 +1078,7 @@ func GetProductQADataHandler(c echo.Context) error {
 // 	results, total, err := mongodb.GetDocumentsOnPagination(mongoCon.Connection, constant.K_REVIEWS_DB, constant.VOTES_COLLECTION, bson.M{"account_id": fmt.Sprint(accountId)}, int64(limit), int64(skip))
 // 	if err != nil {
 // 		zap.L().Error("Error while fetching the aggregate results:", zap.Any("error:", err))
-// 		return err
+//
 // 	}
 // 	pagination := &entity.Pagination{
 // 		Total:   total,
@@ -1069,5 +1095,5 @@ func GetProductQADataHandler(c echo.Context) error {
 // 		Error:      nil,
 // 		Timestamp:  time.Now().UTC(),
 // 	}
-// 	return c.JSON(http.StatusOK, response)
+// 	c.JSON(http.StatusOK, response)
 // }

@@ -3,11 +3,11 @@ package utils
 import (
 	"encoding/json"
 
-	"github.com/labstack/echo"
+	"github.com/gin-gonic/gin"
 )
 
-func Respond(c echo.Context, status int, u interface{}) error {
-	c.Response().Header().Set(echo.HeaderContentType, echo.MIMEApplicationJSONCharsetUTF8)
-	c.Response().WriteHeader(status)
-	return json.NewEncoder(c.Response()).Encode(u)
+func Respond(c *gin.Context, status int, u interface{}) error {
+	c.Header("Content-Type", "application/json; charset=utf-8")
+	c.Writer.WriteHeader(status)
+	return json.NewEncoder(c.Writer).Encode(u)
 }
