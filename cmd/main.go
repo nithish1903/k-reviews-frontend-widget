@@ -43,7 +43,28 @@ func main() {
 
 	r := gin.Default()
 
+	r.Use(func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+
+		// Handle preflight requests
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(http.StatusOK)
+			return
+		}
+
+		c.Next()
+	})
+
+	r.LoadHTMLGlob("templates/*.html")
+	r.Static("/v1/assets", "./templates/assets")
+
 	r.GET("/health", controllers.Health)
+	r.GET("/v1/get-site-review-button", shopify.GetReviewsButton)
+	r.GET("/v1/get-site-reviews", shopify.GetSiteReviewsDataHandler)
+
 	r.POST("/v1/save-product-reviews", shopify.SaveProductReviewsHandler)
 	r.POST("/v1/save-vote", shopify.SaveVotesHandler)
 	r.POST("/v1/save-site-reviews", shopify.SaveSiteReviewsHandler)
@@ -57,7 +78,7 @@ func main() {
 		v1.GET("/get-product-review-details", shopify.GetProductReviewDetailsHandler)
 		v1.GET("/get-product-review-statistics", shopify.GetProductReviewStatisticsHandler)
 
-		v1.GET("/get-site-reviews", shopify.GetSiteReviewsDataHandler)
+		// v1.GET("/get-site-reviews", shopify.GetSiteReviewsDataHandler)
 		v1.GET("/get-site-reviews-images", shopify.GetSiteReviewImgagesHandler)
 		v1.GET("/get-site-review-details", shopify.GetSiteReviewDetailsHandler)
 

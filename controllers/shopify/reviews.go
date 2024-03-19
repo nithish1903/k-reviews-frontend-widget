@@ -18,6 +18,46 @@ import (
 	"go.uber.org/zap"
 )
 
+func GetReviewsButton(c *gin.Context) {
+
+	buttonHTML := `<button data-toggle="modal" data-target="#static-modal" class="z-[2] border-0 rotate-90 fixed top-[50%] -right-[55px] text-center px-6 py-3 bg-[#252338] flex rounded-b-[10px] text-[18px] font-[500] text-[#FFFFFF]">
+        <div class="h-[20px] w-[20px] mr-2.5">
+            <img src="/Users/kspl-ragavedhra/Documents/Work/Projects/k-reviews-frontend-widget/templates/assets/images/star.svg" alt="start" width="100%" height="auto" />
+        </div>
+        <span>REVIEWS</span>
+    </button>`
+
+	// Send the HTML response
+	c.Header("Content-Type", "text/html; charset=utf-8")
+	c.String(http.StatusOK, buttonHTML)
+
+	// Sample review data
+	// reviews := []entity.ProductReview{
+	// 	{Title: "John Doe", AccountID: "1", Content: "Great product, highly recommended!"},
+	// 	{Title: "Jane Smith", AccountID: "1", Content: "Very satisfied with my purchase."},
+	// 	// Add more reviews as needed
+	// }
+
+	// // Render the review widget template with review data
+	// c.HTML(http.StatusOK, "site_reviews_modal.html", gin.H{
+	// 	"Reviews": reviews,
+	// })
+}
+
+func OpenReviewModalHandler(c *gin.Context) {
+	// Sample review data
+	reviews := []entity.ProductReview{
+		{Title: "John Doe", AccountID: "1", Content: "Great product, highly recommended!"},
+		{Title: "Jane Smith", AccountID: "1", Content: "Very satisfied with my purchase."},
+		// Add more reviews as needed
+	}
+
+	// Render the review widget template with review data
+	c.HTML(http.StatusOK, "site_reviews_modal.html", gin.H{
+		"Reviews": reviews,
+	})
+
+}
 func SaveProductReviewsHandler(c *gin.Context) {
 	zap.L().Info("SaveProductReviewsHandler called..!")
 
@@ -691,11 +731,12 @@ func GetSiteReviewsDataHandler(c *gin.Context) {
 		page = 1
 	}
 
-	accountId, ok := c.Get("account_id")
-	if !ok {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
+	// accountId, ok := c.Get("account_id")
+	// if !ok {
+	// 	c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get account ID"})
 
-	}
+	// }
+	accountId := "1"
 	productIdStr := c.Query("productId")
 	filterType := c.Query("filterType")
 
@@ -713,9 +754,9 @@ func GetSiteReviewsDataHandler(c *gin.Context) {
 	}
 	var filter bson.M
 	if productId != 0 {
-		filter = bson.M{"account_id": accountId, "product_id": productId}
+		filter = bson.M{"account_id": accountId, "product_id": productId, "status": constant.REVIEW_STATUS_APPROVED}
 	} else {
-		filter = bson.M{"account_id": accountId}
+		filter = bson.M{"account_id": accountId, "status": constant.REVIEW_STATUS_APPROVED}
 	}
 	pipeline := mongo.Pipeline{
 		{{Key: "$match", Value: filter}},
@@ -727,11 +768,9 @@ func GetSiteReviewsDataHandler(c *gin.Context) {
 	options.SetSkip(skip)
 	switch filterType {
 	case "oldest":
-		filter["created_at"] = bson.M{"$exists": true}
 		sortOption := bson.M{"created_at": -1}
 		options.Sort = sortOption
 	case "newest":
-		filter["created_at"] = bson.M{"$exists": true}
 		sortOption := bson.M{"created_at": 1}
 		options.Sort = sortOption
 	case "highestRating":
@@ -771,7 +810,7 @@ func GetSiteReviewsDataHandler(c *gin.Context) {
 		averageRating = math.Round(averageRating*100) / 100
 	}
 
-	pagination := &entity.Pagination{
+	pagination := entity.Pagination{
 		Total:   total,
 		PerPage: limit,
 		Page:    int64(page),
@@ -780,23 +819,29 @@ func GetSiteReviewsDataHandler(c *gin.Context) {
 	zap.L().Info("results:", zap.Any("response:", results))
 	zap.L().Info("RatingCounts:", zap.Any("response:", ratingCounts))
 	zap.L().Info("averageRating:", zap.Any("response:", averageRating))
+	zap.L().Info("pagination:", zap.Any("pagination:", pagination))
 
-	response := entity.ReviewResponse{
-		Message: "Success",
-		Data: struct {
-			Results       interface{}     `json:"results,omitempty"`
-			RatingCounts  map[int32]int32 `json:"ratings_counts,omitempty"` // Assuming ratingCounts is a map[string]int32
-			AverageRating float64         `json:"avergae_ratings,omitempty"`
-		}{results, ratingCounts, averageRating},
-		Pagination: pagination,
-		Status:     true,
-		StatusCode: 200,
-		Error:      nil,
-		Timestamp:  time.Now().UTC(),
-	}
-	zap.L().Info("sending sent:", zap.Any("response:", response))
+	// response := entity.ReviewResponse{
+	// 	Message: "Success",
+	// 	Data: struct {
+	// 		Results       interface{}     `json:"results,omitempty"`
+	// 		RatingCounts  map[int32]int32 `json:"ratings_counts,omitempty"` // Assuming ratingCounts is a map[string]int32
+	// 		AverageRating float64         `json:"avergae_ratings,omitempty"`
+	// 	}{results, ratingCounts, averageRating},
+	// 	Pagination: pagination,
+	// 	Status:     true,
+	// 	StatusCode: 200,
+	// 	Error:      nil,
+	// 	Timestamp:  time.Now().UTC(),
+	// }
+	// c.JSON(http.StatusOK, response)
 
-	c.JSON(http.StatusOK, response)
+	c.HTML(http.StatusOK, "site_reviews_modal.html", gin.H{
+		"Reviews":       results,
+		"RatingCounts":  ratingCounts,
+		"AverageRating": averageRating,
+		"Pagination":    pagination,
+	})
 }
 
 func GetSiteReviewImgagesHandler(c *gin.Context) {

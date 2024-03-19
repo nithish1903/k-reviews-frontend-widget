@@ -11,9 +11,6 @@ type SiteReview struct {
 	ID        primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"` // Primary key
 	AccountID string             `json:"account_id" bson:"account_id"`
 	User      User               `json:"user" bson:"user"`
-	Name      string             `json:"name" bson:"name"`
-	Email     string             `json:"email" bson:"email"`
-	Address   Address            `json:"address" bson:"address"`
 	Rating    int                `json:"rating" bson:"rating"`
 	Title     string             `json:"title" bson:"title"`
 	Content   string             `json:"content" bson:"content"`
