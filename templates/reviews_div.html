@@ -1,0 +1,65 @@
+<div class="grid grid-cols-12">
+    {{ range .Reviews }}
+    <div data-modal-target="prodcutReview-modal" data-modal-toggle="prodcutReview-modal"
+        onclick="openReviewModal('{{ .user.name }}', '{{ .created_at }}', '{{ .content }}', '{{ .rating }}', '{{ .upvotes }}', '{{ .downvotes }}')"
+        class="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 mt-6">
+        <div class="w-[233px] mx-auto drop-shadow-lg">
+            <!-- <div>
+                    <img class="rounded-tl-[10px] rounded-tr-[10px]" src="{{ .image }}" alt="review"
+                        width="auto" height="320px" />
+                </div> -->
+            <div class="px-5 py-5 rounded-bl-[10px] rounded-br-[10px] bg-[#ffff] h-[185px]">
+                <div class="flex items-center">
+                    <!-- <div class="mr-2.5">
+                            <img src="{{ .user.profile_image }}" alt="profile"
+                                class="w-[30px] h-[30px]" />
+                        </div> -->
+                    <div class="">
+                        <h4 class="text-[14px] poppins font-[400]">{{ .user.name }}</h4>
+                        <div>
+                            <p class="text-[#D9D9D9] text-[8px] poppins font-[400]">
+                                {{ .created_at }}
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2.5">
+                    <p class="reviewText text-[8px] font-light poppins">{{ .content }}</p>
+                </div>
+                <div class="flex items-center justify-between mt-2.5">
+                    <div class="flex items-center">
+                        <h6 class="mb-0 mr-2.5 text-[8px] poppins">{{ .rating }}</h6>
+                        <script>
+                            // Convert rating to integer using JavaScript
+                            var rating = "{{ .rating }}";
+                            var ratingInt = parseInt(rating, 10);
+                            for (var i = 0; i < ratingInt; i++) {
+                                document.write(
+                                    '<div class="h-[10px] w-[10px]"><img src="https://d1anop1e0m8m58.cloudfront.net/k-reviews/assets/images/star.svg" alt="start" width="100%" height="auto" /></div>'
+                                );
+                            }
+                        </script>
+                    </div>
+                    <div class="flex">
+                        <div class="flex items-center mr-2.5">
+                            <div class="mr-1">
+                                <img src="https://d1anop1e0m8m58.cloudfront.net/k-reviews/assets/images/reviewpage/like.svg"
+                                    alt="like" width="10px" height="10px" />
+                            </div>
+                            <p class="text-[10px] poppins">{{ .upvotes }}</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-1">
+                                <img src="https://d1anop1e0m8m58.cloudfront.net/k-reviews/assets/images/reviewpage/like.svg"
+                                    class="rotate-180" alt="like" width="10px" height="10px" />
+                            </div>
+                            <p class="text-[10px] poppins">{{ .downvotes }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>

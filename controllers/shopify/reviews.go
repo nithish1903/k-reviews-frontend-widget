@@ -742,7 +742,7 @@ func GetSiteReviewsDataHandler(c *gin.Context) {
 
 	mongoCon := mongodb.MongoConnect()
 
-	limit := int64(10)
+	limit := int64(8)
 	skip := (int64(page) - 1) * int64(limit)
 	var productId int64 = 0
 	if productIdStr != "" {
@@ -836,12 +836,20 @@ func GetSiteReviewsDataHandler(c *gin.Context) {
 	// }
 	// c.JSON(http.StatusOK, response)
 
-	c.HTML(http.StatusOK, "site_reviews_modal.html", gin.H{
-		"Reviews":       results,
-		"RatingCounts":  ratingCounts,
-		"AverageRating": averageRating,
-		"Pagination":    pagination,
-	})
+	if page == 1 {
+		// Render the initial page with the complete HTML
+		c.HTML(http.StatusOK, "site_reviews_modal.html", gin.H{
+			"Reviews":       results,
+			"RatingCounts":  ratingCounts,
+			"AverageRating": averageRating,
+			"Pagination":    pagination,
+		})
+	} else {
+		// Render only the reviews div for subsequent pages
+		c.HTML(http.StatusOK, "reviews_div.html", gin.H{
+			"Reviews": results,
+		})
+	}
 }
 
 func GetSiteReviewImgagesHandler(c *gin.Context) {
